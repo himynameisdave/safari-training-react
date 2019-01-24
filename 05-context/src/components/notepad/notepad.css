@@ -1,0 +1,26 @@
+
+.notepad {
+    /* background: #00aacc; */
+    height: 100%;
+    position: relative;
+    width: 70%;
+}
+
+.notepad__last-edit {
+    position: absolute;
+    top: 0.75rem;
+    color: #c1c1c1;
+    text-align: center;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+.notepad__content {
+    border: 0;
+    height: 100%;
+    width: 100%;
+    resize: none;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 2.25rem 0.75rem 0.75rem;
+}
