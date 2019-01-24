@@ -1,0 +1,28 @@
+.controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 0.75rem;
+    height: 100%;
+    width: 100%;
+}
+
+.controls__button {
+    appearance: none;
+    border: 1px solid #007AFF;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #007AFF;
+    cursor: pointer;
+    display: block;
+    font-size: 0.8rem;
+    margin: 0 1rem 0 0;
+    height: 30px;
+    padding: 0 10px;
+    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.controls__button:hover {
+    background-color: #007AFF;
+    color: #ffffff;
+}

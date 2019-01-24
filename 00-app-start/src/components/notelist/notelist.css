@@ -1,0 +1,44 @@
+.notelist {
+    height: 100%;
+    width: 100%;
+}
+
+.notelist__list {
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+.notelist__list__item {
+    border-bottom: 1px solid #e1e1e1;
+    cursor: pointer;
+    padding: 0.75rem;
+}
+
+.notelist__list__item--active {
+    background: #007AFF;
+    color: #ffffff;
+}
+
+.notelist__list__item__title {
+
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.notelist__list__item__last-edited {
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: 0.25rem;
+}
+
+.notelist__empty {
+    color: #c2c2c2;
+    font-size: 1.25rem;
+    margin: 2rem auto;
+    text-align: center;
+}
