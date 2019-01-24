@@ -2,6 +2,12 @@
     border-right: 1px solid #e1e1e1;
     height: 100%;
     width: 30%;
+    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.tabs--theme-dark {
+    background-color: #444444;
+    color: #f1f1f1;
 }
 
 .tabs__menu {
@@ -27,9 +33,12 @@
     padding: 0 0.75rem;
     transition: border-color 0.25s ease-in-out;
     width: 100%;
-    /* background: red; */
 }
 
 .tabs__menu__tab--active {
     border-bottom: 3px solid #007AFF;
+}
+
+.tabs--theme-dark .tabs__menu__tab--active {
+    border-color: #8BC2FF;
 }

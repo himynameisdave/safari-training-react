@@ -1,6 +1,13 @@
 .notelist {
+    background-color: #ffffff;
     height: 100%;
     width: 100%;
+    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.notelist--theme-dark {
+    background-color: #444444;
+    color: #f1f1f1;
 }
 
 .notelist__list {
@@ -15,8 +22,14 @@
 }
 
 .notelist__list__item--active {
-    background: #007AFF;
+    background-color: #007AFF;
     color: #ffffff;
+    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.notelist--theme-dark .notelist__list__item--active {
+    background-color: #8BC2FF;
+    color: #444444;
 }
 
 .notelist__list__item__title {

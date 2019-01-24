@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import NotelistEmpty from './notelist-empty.jsx';
 import NotelistItem from './notelist-item.jsx';
+import ThemeContext from '../../theme-context.js';
 import './notelist.css';
 
 
@@ -25,22 +27,28 @@ class Notelist extends Component {
     render() {
         const { notes, onSetActiveNote } = this.props;
         return (
-            <div className="notelist">
-                {!this.hasNotes
-                    ? (<NotelistEmpty />)
-                    : (
-                        <ul className="notelist__list">
-                            {this.hasNotes && notes.map(note => (
-                                <NotelistItem
-                                    key={note.id}
-                                    onSetActiveNote={onSetActiveNote(note.id, note.isActive)}
-                                    {...note}
-                                />
-                            ))}
-                        </ul>
-                    )
-                }
-            </div>
+            <ThemeContext.Consumer>
+                {({ theme }) => (
+                    <div className={classnames('notelist', {
+                        'notelist--theme-dark': theme === 'dark'
+                    })}>
+                        {!this.hasNotes
+                            ? (<NotelistEmpty />)
+                            : (
+                                <ul className="notelist__list">
+                                    {this.hasNotes && notes.map(note => (
+                                        <NotelistItem
+                                            key={note.id}
+                                            onSetActiveNote={onSetActiveNote(note.id, note.isActive)}
+                                            {...note}
+                                        />
+                                    ))}
+                                </ul>
+                            )
+                        }
+                    </div>
+                )}
+            </ThemeContext.Consumer>
         )
     }
 }

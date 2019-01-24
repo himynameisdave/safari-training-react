@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import ThemeContext from '../../theme-context.js';
 import './notepad.css';
 
 
@@ -30,18 +32,24 @@ class Notepad extends Component {
     render() {
         const { content, lastEdited } = this.props;
         return (
-            <div className="notepad">
-                {lastEdited && (
-                    <div className="notepad__last-edit">
-                        {lastEdited}
+            <ThemeContext.Consumer>
+                {({ theme }) => (
+                    <div className={classnames('notepad', {
+                        'notepad--theme-dark': theme === 'dark'
+                    })}>
+                        {lastEdited && (
+                            <div className="notepad__last-edit">
+                                {lastEdited}
+                            </div>
+                        )}
+                        <textarea
+                            className="notepad__content"
+                            onChange={this.handleChange}
+                            value={content}
+                        />
                     </div>
                 )}
-                <textarea
-                    className="notepad__content"
-                    onChange={this.handleChange}
-                    value={content}
-                />
-            </div>
+            </ThemeContext.Consumer>
         );
     }
 };

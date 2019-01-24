@@ -16,6 +16,7 @@
 }
 
 .notepad__content {
+    background-color: #ffffff;
     border: 0;
     height: 100%;
     width: 100%;
@@ -23,4 +24,10 @@
     font-family: inherit;
     font-size: 1rem;
     padding: 2.25rem 0.75rem 0.75rem;
+}
+
+.notepad--theme-dark .notepad__content {
+    background-color: #444444;
+    color: #f1f1f1;
+    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
 }
